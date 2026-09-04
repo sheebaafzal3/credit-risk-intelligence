@@ -19,8 +19,12 @@ st.set_page_config(
 # LOAD DATA + MODEL
 # ============================================================
 
-DATA_PATH = "/content/credit_risk_processed.csv"
-MODEL_PATH = "/content/credit_risk_model.pkl"
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent
+
+DATA_PATH = BASE_DIR / "credit_risk_processed.csv"
+MODEL_PATH = BASE_DIR / "credit_risk_model.pkl"
 
 @st.cache_data
 def load_data():
